@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <h1>Login </h1>
+            <div class="form-group">
+                <label for="">Email id</label>
+                <input type="text" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="">Mobile Number:</label>
+                <input type="text" class="form-control" id="usernamecheck" onkeyup="validation()" required>
+            </div>
+            <div class="form-group">
+                <label for="">Password</label>
+                <input type="text" autocomplete="off"onkeyup = "passCheck(this.value)" class="form-control" required>
+            </div>
+            <p>
+                <label id="password-check"> 8 characters </label><br>
+               <label id="password-check"> 1 lowercase character </label><br>
+                <label id="password-check"> 1 uppercase character </label><br>
+                <label id="password-check"> 1 decimal charcter </label><br>
+                <label id="password-check"> 1 special character </label>
+            </p>
+            <error id="alert-caps"></error>
+            <input type="submit" class="btn" value="Login">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Learning the DOM</title>
+</head>
+<body>
+<!-- <h1>Document Object Model</h1>
+<button id="changeBackground">Change Background Color</button>
+<script src="scripts.js"></script> -->
+<!-- <button>Act-once button</button>
+<script>
+    let button = document.querySelector('button');
+    function once() {
+        console.log('Done.');
+        button.removeEventListener('click',once);
+    }
+    button.addEventListener('click',once); -->
+    <!-- <p>A paragraph with a <button>button</button>.</p>
+    <script>
+        let para = document.querySelector('p');
+        let button = document.querySelector('button');
+         para.addEventListener("mousedown" , () => {
+            console.log('Handler for paragraph');
+        });
+        button.addEventListener('mousedown', event => {
+            console.log('Handler for button');
+            if(event.button == 2) event.stopPropagation();
+        }); -->
+        <button>A</button>
+        <button>B</button>
+        <button>C</button>
+        <script>
+            document.body.addEventListener('click',event => {
+                if(event.target.nodeName == 'BUTTON'){
+                    console.log('Clicked', event.target.textContent);
+                }
+            })
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration and Login form</title>
+</head>
+
+<body>
+    <form id="form">
+        <input type="text" name="userName" id="username" required placeholder="Enter username">
+        <input type="password" name="password" id="password" required placeholder="Enter Password">
+        <button>Login</button>
+    </form>
+
+    <script>
+        let form = document.getElementById("form");
+        if (localStorage.getItem('userObj')) {
+            //Parse to JSON object
+
+            let parseOhj = JSON.parse(localStorage.getItem('userObj'));
+            Document.getElementById('username').value = parseOhj.username;
+            Document.getElementById('password').value = parseOhj.password;
+
+        }
+
+        if (localStorage.getItem('username').value && localStorage.getItem('password').value) {
+            document.getElementById('username').value = localStorage.getItem('username');
+            document.getElementById('password').value = localStorage.getItem('password');
+
+        }
+        form.addEventListener('submit', (e) => {
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+
+            //creating a user object
+            let userObj = {
+                username: username,
+                password: password
+            }
+
+            //localstorge 
+            localStorage.setItem('username', username);
+            localStorage.setItem('userOject', JSON.stringify(userObj));
+            localStorage.setItem('password', password);
+
+            alert("Your details have been save to local storage");
+
+        })
+    </script>
+</body>
+
+</html>
